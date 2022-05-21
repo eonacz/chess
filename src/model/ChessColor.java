@@ -9,7 +9,7 @@ public enum ChessColor {
     BLACK("Black", Color.BLACK), WHITE("White", Color.WHITE), NONE("No Player", Color.WHITE);
 
     private final String name;
-    private final Color color;
+    private final Color color;//haol
 
     ChessColor(String name, Color color) {
         this.name = name;
