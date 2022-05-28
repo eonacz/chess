@@ -1,7 +1,7 @@
 package model;
 
-import view.ChessboardPoint;
 import controller.ClickController;
+import view.ChessboardPoint;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -32,11 +32,10 @@ public class RookChessComponent extends ChessComponent {
      */
     public void loadResource() throws IOException {
         if (ROOK_WHITE == null) {
-            ROOK_WHITE = ImageIO.read(new File("./images/rook-white.png"));
+            ROOK_WHITE = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess1-rook.png"));
         }
-
         if (ROOK_BLACK == null) {
-            ROOK_BLACK = ImageIO.read(new File("./images/rook-black.png"));
+            ROOK_BLACK = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess2-rook.png"));
         }
     }
 
@@ -60,8 +59,9 @@ public class RookChessComponent extends ChessComponent {
         }
     }
 
-    public RookChessComponent(ChessboardPoint chessboardPoint, Point location, ChessColor color, ClickController listener, int size) {
+    public RookChessComponent(ChessboardPoint chessboardPoint, Point location, ChessColor color, ClickController listener, int size, char name) {
         super(chessboardPoint, location, color, listener, size);
+        this.name = name;
         initiateRookImage(color);
     }
 
@@ -75,12 +75,12 @@ public class RookChessComponent extends ChessComponent {
 
     @Override
     public boolean canMoveTo(ChessComponent[][] chessComponents, ChessboardPoint destination) {
-        ChessboardPoint source = getChessboardPoint();
-        if (source.getX() == destination.getX()) {
+        ChessboardPoint source = getChessboardPoint();//不用判断目标是否在棋盘内？
+        if (source.getX() == destination.getX()) {//在同一列
             int row = source.getX();
             for (int col = Math.min(source.getY(), destination.getY()) + 1;
-                 col < Math.max(source.getY(), destination.getY()); col++) {
-                if (!(chessComponents[row][col] instanceof EmptySlotComponent)) {
+                 col < Math.max(source.getY(), destination.getY()); col++) {//遍历棋子与目标位之间的空格
+                if (!(chessComponents[row][col] instanceof EmptySlotComponent)) {//如果中间有其他子，不能移动（车不可越子）
                     return false;
                 }
             }
@@ -107,7 +107,7 @@ public class RookChessComponent extends ChessComponent {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 //        g.drawImage(rookImage, 0, 0, getWidth() - 13, getHeight() - 20, this);
-        g.drawImage(rookImage, 0, 0, getWidth() , getHeight(), this);
+        g.drawImage(rookImage, -getWidth()/2, -getHeight()/2, getWidth()*2 , getHeight()*2, this);
         g.setColor(Color.BLACK);
         if (isSelected()) { // Highlights the model if selected.
             g.setColor(Color.RED);

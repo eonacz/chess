@@ -1,7 +1,7 @@
 package model;
 
-import view.ChessboardPoint;
 import controller.ClickController;
+import view.ChessboardPoint;
 
 import javax.swing.*;
 import java.awt.*;
@@ -38,6 +38,8 @@ public abstract class ChessComponent extends JComponent {
     private ChessboardPoint chessboardPoint;
     protected final ChessColor chessColor;
     private boolean selected;
+    protected char name;
+    //GamePage gamePage;
 
     protected ChessComponent(ChessboardPoint chessboardPoint, Point location, ChessColor chessColor, ClickController clickController, int size) {
         enableEvents(AWTEvent.MOUSE_EVENT_MASK);
@@ -47,6 +49,7 @@ public abstract class ChessComponent extends JComponent {
         this.chessColor = chessColor;
         this.selected = false;
         this.clickController = clickController;
+        //this.gamePage = gamePage;
     }
 
     public ChessboardPoint getChessboardPoint() {
@@ -113,6 +116,10 @@ public abstract class ChessComponent extends JComponent {
      * @throws IOException 如果一些资源找不到(如棋子图片路径错误)，就会抛出异常
      */
     public abstract void loadResource() throws IOException;
+
+    public String toString(){
+        return String.valueOf(this.name);
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
