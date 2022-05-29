@@ -81,4 +81,14 @@ public class ChessGameFrame extends JFrame {
             gameController.loadGameFromFile(path);
         });
     }
+
+
+    //弹窗在这里
+
+
+
+
+
+
+
 }
