@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ae8c768-12ca-43f8-b460-0cd62f47bf8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/Viewback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/MyIcon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/MyLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="view" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\13601\Documents\GitHub\chess\src\model" />
       <recent name="C:\Users\13601\Documents\GitHub\chess\src" />
@@ -50,8 +55,8 @@
       <recent name="C:\Users\eonacz\Documents\GitHub\chess\resource" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="controller" />
       <recent name="view" />
+      <recent name="controller" />
       <recent name="model" />
     </key>
   </component>
