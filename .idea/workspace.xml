@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ae8c768-12ca-43f8-b460-0cd62f47bf8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/BishopChessComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/KingChessComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/KnightChessComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/PawnChessComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/QueenChessComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ChessComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ChessComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EmptySlotComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EmptySlotComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RookChessComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RookChessComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
@@ -54,7 +46,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HomePage">
     <configuration name="HomePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameFrame.HomePage" />
       <module name="chess" />
@@ -68,9 +60,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="chess" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HomePage" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

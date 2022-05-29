@@ -77,7 +77,7 @@ public class Chessboard extends JComponent {
     public Chessboard(int width, int height, List<String> ChessData){
         setLayout(null); // Use absolute layout.
         setSize(width, height);
-        CHESS_SIZE = width / 8;
+        CHESS_SIZE = width / 8;//新构造器，用于存档
         System.out.printf("chessboard size = %d, chess size = %d\n", width, CHESS_SIZE);
 
         for (int i = 0; i < ChessData.size()-1; i++) {
@@ -157,7 +157,7 @@ public class Chessboard extends JComponent {
         add(chessComponents[row][col] = chessComponent);
     }
 
-    public void swapChessComponents(ChessComponent chess1, ChessComponent chess2) {
+    public void swapChessComponents(ChessComponent chess1, ChessComponent chess2) {//规则
         // Note that chess1 has higher priority, 'destroys' chess2 if exists.
         if (!(chess2 instanceof EmptySlotComponent)) {
             remove(chess2);
@@ -184,17 +184,17 @@ public class Chessboard extends JComponent {
                 putChessOnBoard(new EmptySlotComponent(new ChessboardPoint(i, j), calculatePoint(i, j), clickController, CHESS_SIZE, '_'));
             }
         }
+    }//棋盘重置，全空
+
+    public void swapColor() {
+        currentColor = currentColor == ChessColor.BLACK ? ChessColor.WHITE : ChessColor.BLACK;
     }
 
     public void initiateEmptyChessboard(int row, int col) {
         ChessComponent chessComponent = new EmptySlotComponent(new ChessboardPoint(row, col), calculatePoint(row, col), clickController, CHESS_SIZE,'_');
         chessComponent.setVisible(true);
         putChessOnBoard(chessComponent);
-    }
-
-    public void swapColor() {
-        currentColor = currentColor == ChessColor.BLACK ? ChessColor.WHITE : ChessColor.BLACK;
-    }
+    }//摆新棋子，及以下
 
     private void initRookOnBoard(int row, int col, ChessColor color, char name) {
         ChessComponent chessComponent = new RookChessComponent(new ChessboardPoint(row, col), calculatePoint(row, col), color, clickController, CHESS_SIZE,name);
@@ -232,7 +232,7 @@ public class Chessboard extends JComponent {
         putChessOnBoard(chessComponent);
     }
 
-    public String getChessboardGraph() {
+    public String getChessboardGraph() {//存档，as5
         StringBuilder[] string1 = new StringBuilder[8];
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -285,17 +285,17 @@ public class Chessboard extends JComponent {
 
 
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {//画棋子
         super.paintComponent(g);
         ((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     }
 
 
-    private Point calculatePoint(int row, int col) {
+    private Point calculatePoint(int row, int col) {//？
         return new Point(col * CHESS_SIZE, row * CHESS_SIZE);
     }
 
-    public boolean loadGame(List<String> chessData,boolean fileType) {
+    public boolean loadGame(List<String> chessData,boolean fileType) {//load方法体
         boolean isLoad = true;
         if (fileType == false){
             isLoad = false;
@@ -325,10 +325,7 @@ public class Chessboard extends JComponent {
             new GamePage(chessData);
             chessData.forEach(System.out::println);
         }
-
         return isLoad;
     }
-
-
 
 }
