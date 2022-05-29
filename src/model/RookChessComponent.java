@@ -7,7 +7,8 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import static view.Chessboard.chessComponents;
 /**
  * 这个类表示国际象棋里面的车
  */
@@ -23,7 +24,7 @@ public class RookChessComponent extends ChessComponent {
     /**
      * 车棋子对象自身的图片，是上面两种中的一种
      */
-    private Image rookImage;
+    private Image rookImage;;
 
     /**
      * 读取加载车棋子的图片
@@ -32,10 +33,10 @@ public class RookChessComponent extends ChessComponent {
      */
     public void loadResource() throws IOException {
         if (ROOK_WHITE == null) {
-            ROOK_WHITE = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess1-rook.png"));
+            ROOK_WHITE = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess1-rook.png"));
         }
         if (ROOK_BLACK == null) {
-            ROOK_BLACK = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess2-rook.png"));
+            ROOK_BLACK = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess2-rook.png"));
         }
     }
 
@@ -63,6 +64,21 @@ public class RookChessComponent extends ChessComponent {
         super(chessboardPoint, location, color, listener, size);
         this.name = name;
         initiateRookImage(color);
+    }
+
+    @Override
+    public ArrayList<ChessComponent> getCanMoves(){
+        ArrayList<ChessComponent> zz =new ArrayList<>();
+        ChessboardPoint z;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                z =new ChessboardPoint(i,j);
+                if (canMoveTo(chessComponents,z)){
+                    zz.add(chessComponents[i][j]);
+                }
+            }
+        }
+        return zz;
     }
 
     /**

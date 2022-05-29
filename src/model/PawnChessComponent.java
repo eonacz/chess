@@ -7,6 +7,9 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static view.Chessboard.chessComponents;
 
 public class PawnChessComponent extends ChessComponent{
     private static Image PAWN_WHITE;
@@ -18,6 +21,21 @@ public class PawnChessComponent extends ChessComponent{
         this.name = name;
         initiatePawnImage(color);
     }
+
+    public ArrayList<ChessComponent> getCanMoves(){
+        ArrayList<ChessComponent> zz =new ArrayList<>();
+        ChessboardPoint z;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                z =new ChessboardPoint(i,j);
+                if (canMoveTo(chessComponents,z)){
+                    zz.add(chessComponents[i][j]);
+                }
+            }
+        }
+        return zz;
+    }
+
 
     @Override
     public boolean canMoveTo(ChessComponent[][] chessComponents, ChessboardPoint destination) {
@@ -58,10 +76,10 @@ public class PawnChessComponent extends ChessComponent{
     @Override
     public void loadResource() throws IOException {
         if (PAWN_WHITE == null) {
-            PAWN_WHITE = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess1-pawn.png"));
+            PAWN_WHITE = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess1-pawn.png"));
         }
         if (PAWN_BLACK == null) {
-            PAWN_BLACK = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess2-pawn.png"));
+            PAWN_BLACK = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess2-pawn.png"));
         }
     }
 

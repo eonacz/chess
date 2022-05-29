@@ -7,6 +7,9 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static view.Chessboard.chessComponents;
 
 public class BishopChessComponent extends ChessComponent{
 
@@ -34,6 +37,20 @@ public class BishopChessComponent extends ChessComponent{
         this.name = name;
         initiateBishopImage(color);
     }
+    public ArrayList<ChessComponent> getCanMoves(){
+        ArrayList<ChessComponent> zz =new ArrayList<>();
+        ChessboardPoint z;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                z =new ChessboardPoint(i,j);
+                if (canMoveTo(chessComponents,z)){
+                    zz.add(chessComponents[i][j]);
+                }
+            }
+        }
+        return zz;
+    }
+
 
     @Override
     public boolean canMoveTo(ChessComponent[][] chessComponents, ChessboardPoint destination) {

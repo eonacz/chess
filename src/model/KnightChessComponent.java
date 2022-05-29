@@ -7,6 +7,9 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static view.Chessboard.chessComponents;
 
 public class KnightChessComponent extends ChessComponent{
 
@@ -35,6 +38,20 @@ public class KnightChessComponent extends ChessComponent{
         initiateKnightImage(color);
     }
 
+    public ArrayList<ChessComponent> getCanMoves(){
+        ArrayList<ChessComponent> zz =new ArrayList<>();
+        ChessboardPoint z;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                z =new ChessboardPoint(i,j);
+                if (canMoveTo(chessComponents,z)){
+                    zz.add(chessComponents[i][j]);
+                }
+            }
+        }
+        return zz;
+    }
+
     @Override
     public boolean canMoveTo(ChessComponent[][] chessboard, ChessboardPoint destination) {
         ChessboardPoint source = getChessboardPoint();
@@ -50,10 +67,10 @@ public class KnightChessComponent extends ChessComponent{
     @Override
     public void loadResource() throws IOException {
         if (KNIGHT_WHITE == null) {
-            KNIGHT_WHITE = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess1-knight.png"));
+            KNIGHT_WHITE = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess1-knight.png"));
         }
         if (KNIGHT_BLACK == null) {
-            KNIGHT_BLACK = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess2-knight.png"));
+            KNIGHT_BLACK = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess2-knight.png"));
         }
     }
 

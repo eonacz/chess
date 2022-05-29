@@ -29,13 +29,23 @@ public class Chessboard extends JComponent {
      */
     private static final int CHESSBOARD_SIZE = 8;
 
-    private final ChessComponent[][] chessComponents = new ChessComponent[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
+    public static ChessComponent[][] chessComponents = new ChessComponent[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
     private ChessColor currentColor = ChessColor.BLACK;
     //all chessComponents in this chessboard are shared only one model controller
     private final ClickController clickController = new ClickController(this);
     private final int CHESS_SIZE;
     private int cnt = 0;//每新建一个游戏，cnt++，方便存档
     private int round = 0;
+
+    private double radius;
+
+    public double getRadius() {
+        return this.radius;
+    }
+
+    public ChessComponent[][] getchessComponents() {
+        return chessComponents;
+    }
 
 
     public Chessboard(int width, int height) {
@@ -180,39 +190,21 @@ public class Chessboard extends JComponent {
     }
 
 
-
-
-    public boolean check(){
+    public boolean check() {
         for (int i = 0; i < 8; i++) {
-
-        }
-    }
-
-
-
-    private boolean ischecking1(ChessComponent chess1, ChessComponent chess2) {//判断将军的函数1
-        if (chess2 != null && (chess2.toString() == "K") || (chess2.toString() == "k")) {//找到王
-            if (chess1 != null && chess1.getChessColor() != chess2.getChessColor()
-                    && chess1.getChessColor() == currentColor
-                    && chess1.canMoveTo(chessComponents, chess2.getChessboardPoint()))
-                return true;
+            for (int j = 0; j < 8; j++) {
+                if (chessComponents[i][j].getChessColor() != getCurrentColor()) {
+                    for (int k = 0; k < chessComponents[i][j].getCanMoves().size(); k++) {
+                        if ((chessComponents[i][j].getCanMoves().get(k) instanceof KingChessComponent)
+                                && (chessComponents[i][j].getCanMoves().get(k).getChessColor() == getCurrentColor())) {
+                            return true;
+                        }
+                    }
+                }
+            }
         }
         return false;
     }
-
-    private boolean ischecking2(ChessComponent chess1, ChessComponent chess2) {//判断将军的函数2
-        if (chess2 != null && (chess2.toString() == "K") || (chess2.toString() == "k")) {//找到王
-            if (chess1 != null && chess1.getChessColor() != chess2.getChessColor()
-                    && chess1.getChessColor() != currentColor
-                    && chess1.canMoveTo(chessComponents, chess2.getChessboardPoint()))
-                return true;
-        }
-        return false;
-    }
-
-
-
-
 
 
     public void initiateEmptyChessboard() {
@@ -289,7 +281,7 @@ public class Chessboard extends JComponent {
         File file = null;
         try {
             do {
-                String filename = "C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\ChessGame" + cnt + ".txt";
+                String filename = "C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\ChessGame" + cnt + ".txt";
                 file = new File(filename);
                 cnt++;
             } while (file.exists());

@@ -1,12 +1,14 @@
 package model;
 
 import controller.ClickController;
+import jdk.internal.org.objectweb.asm.tree.analysis.SourceValue;
 import view.ChessboardPoint;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * 这个类是一个抽象类，主要表示8*8棋盘上每个格子的棋子情况，当前有两个子类继承它，分别是EmptySlotComponent(空棋子)和RookChessComponent(车)。
@@ -39,7 +41,7 @@ public abstract class ChessComponent extends JComponent {
     protected final ChessColor chessColor;
     private boolean selected;
     protected char name;
-    //GamePage gamePage;
+
 
     protected ChessComponent(ChessboardPoint chessboardPoint, Point location, ChessColor chessColor, ClickController clickController, int size) {
         enableEvents(AWTEvent.MOUSE_EVENT_MASK);
@@ -117,10 +119,11 @@ public abstract class ChessComponent extends JComponent {
      */
     public abstract void loadResource() throws IOException;
 
-    public String toString(){
+    public abstract ArrayList<ChessComponent> getCanMoves();
+
+    public String toString() {
         return String.valueOf(this.name);
     }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponents(g);
@@ -129,4 +132,5 @@ public abstract class ChessComponent extends JComponent {
         g.setColor(squareColor);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
     }
+
 }

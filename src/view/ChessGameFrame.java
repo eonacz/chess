@@ -83,9 +83,6 @@ public class ChessGameFrame extends JFrame {
     }
 
 
-    //弹窗在这里
-
-
 
 
 
