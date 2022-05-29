@@ -59,10 +59,10 @@ public class BishopChessComponent extends ChessComponent{
     @Override
     public void loadResource() throws IOException {
         if (BISHOP_WHITE == null){
-            BISHOP_WHITE = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess1-bishop.png"));
+            BISHOP_WHITE = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess1-bishop.png"));
         }
         if (BISHOP_BLACK == null){
-            BISHOP_BLACK = ImageIO.read(new File("C:\\Users\\13601\\IdeaProjects\\spring102a-22-3\\chessProject\\src\\Image\\chess2-bishop.png"));
+            BISHOP_BLACK = ImageIO.read(new File("C:\\Users\\eonacz\\Documents\\GitHub\\chess\\src\\Image\\chess2-bishop.png"));
         }
     }
 

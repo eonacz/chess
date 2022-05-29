@@ -181,6 +181,15 @@ public class Chessboard extends JComponent {
 
 
 
+
+    public boolean check(){
+        for (int i = 0; i < 8; i++) {
+
+        }
+    }
+
+
+
     private boolean ischecking1(ChessComponent chess1, ChessComponent chess2) {//判断将军的函数1
         if (chess2 != null && (chess2.toString() == "K") || (chess2.toString() == "k")) {//找到王
             if (chess1 != null && chess1.getChessColor() != chess2.getChessColor()
@@ -200,6 +209,10 @@ public class Chessboard extends JComponent {
         }
         return false;
     }
+
+
+
+
 
 
     public void initiateEmptyChessboard() {
