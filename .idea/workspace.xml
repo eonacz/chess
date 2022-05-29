@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="4ae8c768-12ca-43f8-b460-0cd62f47bf8e" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -26,6 +27,9 @@
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="4ae8c768-12ca-43f8-b460-0cd62f47bf8e" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,9 +69,9 @@
       <recent name="view" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\13601\Documents\GitHub\chess\src" />
       <recent name="C:\Users\eonacz\Documents\GitHub\chess\src" />
       <recent name="C:\Users\13601\Documents\GitHub\chess\src\model" />
-      <recent name="C:\Users\13601\Documents\GitHub\chess\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\eonacz\Documents\GitHub\chess\resource" />
@@ -116,8 +120,16 @@
       <updated>1653141276370</updated>
       <workItem from="1653141280394" duration="739000" />
       <workItem from="1653142123979" duration="781000" />
+<<<<<<< Updated upstream
       <workItem from="1653749039598" duration="1150000" />
+<<<<<<< HEAD
       <workItem from="1653804206387" duration="13566000" />
+=======
+      <workItem from="1653804206387" duration="966000" />
+=======
+      <workItem from="1653749039598" duration="2384000" />
+>>>>>>> Stashed changes
+>>>>>>> 0b550041064e2808160aa896536b495a4ccb5971
     </task>
     <servers />
   </component>
