@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ae8c768-12ca-43f8-b460-0cd62f47bf8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/view/MyIcon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/MyLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
@@ -37,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,6 +46,7 @@
       <recent name="view" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eonacz\Documents\GitHub\chess\src" />
       <recent name="C:\Users\13601\Documents\GitHub\chess\src\model" />
       <recent name="C:\Users\13601\Documents\GitHub\chess\src" />
     </key>

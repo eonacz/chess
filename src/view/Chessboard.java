@@ -178,53 +178,32 @@ public class Chessboard extends JComponent {
         return round;
     }
 
-    private static boolean ischecking(MyLabel[][] a) {//判断将军的函数
-        for(int i = 1; i<rows+1; i++) {
-            for(int j=0;j<cols+1;j++) {//对每一个格子进行循环
-                MyIcon icon=(MyIcon) a[i][j].getIcon();
-                if(icon!=null&&getname(icon)=="king") {//找到有王的那个格子
-                    for(int x=1;x<rows+1;x++) {//再次对每个格子进行循环
-                        for(int y=1;y<cols+1;y++) {
-                            MyIcon icon1=(MyIcon) a[x][y].getIcon();
-                            if(icon1!=null&&getside(icon1)!=getside(icon)//判断该格子上有棋子且棋子与王不是同一势力
-                                    &&getside(icon1)==sidetomove
-                                    &&islegalmove(a[x][y],a[i][j])) { //判断走棋的合法性
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
+
+
+
+
+    private boolean ischecking1(ChessComponent chess1, ChessComponent chess2) {//判断将军的函数1
+        if(chess2!=null&&(chess2.toString()=="K")||(chess2.toString()=="k")) {//找到王
+            if(chess1!=null&&chess1.getChessColor()!=chess2.getChessColor()
+                    &&chess1.getChessColor()==currentColor
+                    &&chess1.canMoveTo(chessComponents,chess2.getChessboardPoint()))
+                return true;
         }
         return false;
     }
 
-    private static byte getside(MyIcon icon1) {
-    }
-
-    private static String getname(MyIcon icon) {
-    }
-
-    private static boolean ischecking2(MyLabel[][] a) {
-        for(int i = 1; i<rows+1; i++) {
-            for(int j=0;j<cols+1;j++) {
-                MyIcon icon=(MyIcon) a[i][j].getIcon();
-                if(icon!=null&&getname(icon)=="king") {
-                    for(int x=1;x<rows+1;x++) {
-                        for(int y=1;y<cols+1;y++) {
-                            MyIcon icon1=(MyIcon) a[x][y].getIcon();
-                            if(icon1!=null&&getside(icon1)!=getside(icon)
-                                    &&getside(icon1)!=sidetomove
-                                    &&islegalmove(a[x][y],a[i][j])) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
+    private boolean ischecking2(ChessComponent chess1, ChessComponent chess2) {//判断将军的函数2
+        if(chess2!=null&&(chess2.toString()=="K")||(chess2.toString()=="k")) {//找到王
+            if(chess1!=null&&chess1.getChessColor()!=chess2.getChessColor()
+                    &&chess1.getChessColor()!=currentColor
+                    &&chess1.canMoveTo(chessComponents,chess2.getChessboardPoint()))
+                return true;
         }
         return false;
     }
+
+
+
 
 
     public void initiateEmptyChessboard() {
