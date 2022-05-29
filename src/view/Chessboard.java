@@ -36,6 +36,7 @@ public class Chessboard extends JComponent {
     private final int CHESS_SIZE;
     private int cnt = 0;//每新建一个游戏，cnt++，方便存档
     private int round = 0;
+    private JLabel player = new JLabel("White's turn");
 
 
     public Chessboard(int width, int height) {
@@ -225,6 +226,15 @@ public class Chessboard extends JComponent {
 
     public void swapColor() {
         currentColor = currentColor == ChessColor.BLACK ? ChessColor.WHITE : ChessColor.BLACK;
+        if (currentColor == ChessColor.BLACK){
+            player.setText("Black's turn!");
+        }else{
+            player.setText("White's turn!");
+        }
+    }
+
+    public JLabel getPlayer() {
+        return player;
     }
 
     public void initiateEmptyChessboard(int row, int col) {

@@ -15,6 +15,7 @@ public class GamePage {
     private GameController gameController;
     static JFrame game = new JFrame("ChessGame");
     private Chessboard chessboard;
+    private JLabel player;
 
     public GamePage(){
         game.setSize(420,630);
@@ -41,14 +42,13 @@ public class GamePage {
             addChessboard();
             addUndo();
             addSave();
+            addPlayer();
             game.add(reset);
             //game.revalidate();
         });
         addUndo();
         addSave();
-
-        //JPanel round = new round(this);
-        //game.add(round);
+        addPlayer();
 
     }
 
@@ -77,18 +77,21 @@ public class GamePage {
             addChessboard();
             addUndo();
             addSave();
+            addPlayer();
             game.add(reset);
             //game.revalidate();
         });
         addUndo();
         addSave();
-
-        JLabel round = new JLabel("Round:"+chessboard.getRound()/2);
+        addPlayer();
 
     }
 
-    protected void processMouseEvent(MouseEvent e){
-
+    private void addPlayer(){
+        player = chessboard.getPlayer();
+        player.setLocation(170,410);//1.1
+        player.setSize(100,40);//1.1
+        game.add(player);
     }
 
     private void addChessboard() {
